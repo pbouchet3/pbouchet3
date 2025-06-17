@@ -39,28 +39,6 @@ const Footer = ({ lang }) => {
               </div>
             </div>
 
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">{lang("FOOTER_fastlinks")}</h3>
-              <ul className="space-y-2">
-                {[
-                  lang("HEADER_icon_home"),
-                  lang("HEADER_icon_about"),
-                  lang("HEADER_icon_projects"),
-                  lang("HEADER_icon_contact"),
-                ].map((link) => (
-                  <li key={link}>
-                    <a
-                      href={`#${link.toLowerCase().replace(' ', '').replace('à', 'a')}`}
-                      className="text-gray-400 hover:text-blue-400 transition-colors"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             {/* Skills */}
             <div>
               <h3 className="text-lg font-semibold mb-4">{lang("FOOTER_competences")}</h3>

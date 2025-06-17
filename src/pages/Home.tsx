@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Route, Routes } from 'react-router-dom';
 import About from '../components/About';
@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import HeaderHome from '../components/HeaderHome';
 import HeaderProjects from '../components/HeaderProjects';
 import Hero from '../components/Hero';
+import Opinion from '../components/Opinion';
 import Projects from '../components/Projects';
 import Projectspage from './Projectspage';
 
@@ -16,6 +17,7 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ lang }) => {
   const { t, i18n } = useTranslation();
+  const [opinionsUnlocked, setOpinionsUnlocked] = useState(false)
 
   useEffect(() => {
     i18n.changeLanguage(lang);
@@ -29,6 +31,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
           <Hero lang={t} />
           <About lang={t} />
           <Projects lang={t} language={lang} />
+          <Opinion lang={t} u={opinionsUnlocked}></Opinion>
           <Contact lang={t} />
           <Footer lang={t} />
         </>} />
@@ -41,6 +44,13 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
 
       {/* <h1>{t('welcome')}</h1> */}
       {/* <p>{t('description')}</p> */}
+      <button className='fixed bottom-0 text-transparent'
+        onClick={() => {
+          setOpinionsUnlocked(!opinionsUnlocked)
+          //console.log('🔍 ~ opinionsUnlocked :', opinionsUnlocked);
+        }
+        }
+      >c</button>
     </div >
   );
 };

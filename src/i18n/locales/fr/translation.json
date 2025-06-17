@@ -52,5 +52,12 @@
   "FOOTER_text2": "Conçu et développé par Paul BOUCHET.",
   "FOOTER_competences": "Compétences",
   "FOOTER_copyrights": "Paul BOUCHET. Tous droits réservés.",
-  "PROJECTS_1-title": "Projet 1"
+  "OPINION_title": "Ce qu'en pense les autres...",
+  "OPINION_text1": "Dites ce que vous en pensez!",
+  "OPINION_form_name": "Votre nom",
+  "OPINION_form_name_placeholder": "Votre nom complet",
+  "OPINION_form_message": "Message",
+  "OPINION_form_message_placeholder": "Donnez votre avis ici!",
+  "OPINION_form_send": "Soumettre l'avis",
+  "OPINION_nothing_here": "Soyez le premier a donner votre avis!"
 }

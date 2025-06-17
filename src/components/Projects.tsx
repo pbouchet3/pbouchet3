@@ -1,9 +1,26 @@
+import { collection, getDocs } from "firebase/firestore";
 import { Filter, Github } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { db } from '../Firebase';
 
 const Projects = ({ lang, language }) => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [activeSlide, setActiveSlide] = useState(0);
+  const [projects, setProjects] = useState([])
+
+
+  useEffect(() => {
+    getDocs(collection(db, "projects"))
+      .then((querySnapshot) => {
+        const newData = querySnapshot.docs
+          .map((doc) => ({ ...doc.data(), id: doc.id }));
+        //console.log(newData);
+
+        setProjects(newData)
+        // //console.log(newData);
+      })
+  }, [])
+
 
   const categories = [
     { id: 'all', label: lang("PROJECTS_label_all") },
@@ -19,78 +36,78 @@ const Projects = ({ lang, language }) => {
     { id: 'others', label: lang("PROJECTS_label_others") },
   ];
 
-  const projects = [
-    {
-      id: 1,
-      title: 'ArtsPourEux',
-      description: "Site associatif pour la promotion d'evenements musicaux et culturels, avec gestion des membres et des événements.",
-      image: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=600',
-      category: 'web',
-      technologies: ['React', 'Node.js', 'TailwindCSS', 'TypeScript'],
-      // github: '#',
-      demo: `/portfolio/#/${language}/projects`
-    },
-    {
-      id: 2,
-      title: 'CTTY',
-      description: 'Logiciel en ligne de commande de gestion d\'un terminal serie, tel que PuTTY, avec differentes fonctionnalités.',
-      image: 'https://images.pexels.com/photos/2387877/pexels-photo-2387877.jpeg?auto=compress&cs=tinysrgb&w=600',
-      category: 'software',
-      technologies: ['JavaScript', 'Node.js'],
-      github: 'https://github.com/pbouchet3/ctty',
-      demo: `/portfolio/#/${language}/projects`
-    },
-    {
-      id: 3,
-      title: 'Nextcloud-CLI',
-      description: 'Creation d\'un client en ligne de commande pour Nextcloud, permettant la gestion des fichiers, le telechargement et l\'upload.',
-      image: 'https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&w=600',
-      category: 'software',
-      technologies: ['JavaScript', 'Node.js', 'Nextcloud API'],
-      // github: '#',
-      demo: `/portfolio/#/${language}/projects`
-    },
-    {
-      id: 4,
-      title: 'DeployReverseProxy',
-      description: 'Deploiement totalement automatisé d\'un reverse proxy avec Docker, Nginx pour les applications web, et Lets Encrypt pour les certificats SSL.',
-      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600',
-      category: 'web',
-      technologies: ['Bash', 'Docker', 'Nginx', 'Lets Encrypt'],
-      github: '#',
-      demo: `/portfolio/#/${language}/projects`
-    },
-    {
-      id: 5,
-      title: 'Smart Home Controller',
-      description: 'Système domotique intelligent avec contrôle vocal, apprentissage automatique et interface tactile.',
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600',
-      category: 'embedded',
-      technologies: ['Python', 'TensorFlow', 'Zigbee', 'Qt'],
-      github: '#',
-      demo: `/portfolio/#/${language}/projects`
-    },
-    {
-      id: 6,
-      title: 'LED Matrix Display',
-      description: 'Affichage LED matriciel programmable avec effets visuels, contrôle WiFi et éditeur graphique web.',
-      image: 'https://images.pexels.com/photos/2781814/pexels-photo-2781814.jpeg?auto=compress&cs=tinysrgb&w=600',
-      category: 'electronics',
-      technologies: ['Arduino', 'FastLED', 'WebSocket', 'JavaScript'],
-      github: '#',
-      demo: `/portfolio/#/${language}/projects`
-    },
-    {
-      id: 7,
-      title: 'Home Made server',
-      description: 'Serveur personnel pour héberger des applications web, avec gestion de la sécurité et des performances.',
-      image: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=600',
-      category: '',
-      technologies: ['Docker', 'Nginx', 'Node.js', 'PostgreSQL'],
-      github: '#',
-      demo: `/portfolio/#/${language}/projects`
-    }
-  ];
+  // const projects = [
+  //   {
+  //     id: 1,
+  //     title: 'ArtsPourEux',
+  //     description: "Site associatif pour la promotion d'evenements musicaux et culturels, avec gestion des membres et des événements.",
+  //     image: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=600',
+  //     category: 'web',
+  //     technologies: ['React', 'Node.js', 'TailwindCSS', 'TypeScript'],
+  //     // github: '#',
+  //     demo: `/portfolio/#/${language}/projects`
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'CTTY',
+  //     description: 'Logiciel en ligne de commande de gestion d\'un terminal serie, tel que PuTTY, avec differentes fonctionnalités.',
+  //     image: 'https://images.pexels.com/photos/2387877/pexels-photo-2387877.jpeg?auto=compress&cs=tinysrgb&w=600',
+  //     category: 'software',
+  //     technologies: ['JavaScript', 'Node.js'],
+  //     github: 'https://github.com/pbouchet3/ctty',
+  //     demo: `/portfolio/#/${language}/projects`
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'Nextcloud-CLI',
+  //     description: 'Creation d\'un client en ligne de commande pour Nextcloud, permettant la gestion des fichiers, le telechargement et l\'upload.',
+  //     image: 'https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&w=600',
+  //     category: 'software',
+  //     technologies: ['JavaScript', 'Node.js', 'Nextcloud API'],
+  //     // github: '#',
+  //     demo: `/portfolio/#/${language}/projects`
+  //   },
+  //   {
+  //     id: 4,
+  //     title: 'DeployReverseProxy',
+  //     description: 'Deploiement totalement automatisé d\'un reverse proxy avec Docker, Nginx pour les applications web, et Lets Encrypt pour les certificats SSL.',
+  //     image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600',
+  //     category: 'web',
+  //     technologies: ['Bash', 'Docker', 'Nginx', 'Lets Encrypt'],
+  //     github: '#',
+  //     demo: `/portfolio/#/${language}/projects`
+  //   },
+  //   {
+  //     id: 5,
+  //     title: 'Smart Home Controller',
+  //     description: 'Système domotique intelligent avec contrôle vocal, apprentissage automatique et interface tactile.',
+  //     image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600',
+  //     category: 'embedded',
+  //     technologies: ['Python', 'TensorFlow', 'Zigbee', 'Qt'],
+  //     github: '#',
+  //     demo: `/portfolio/#/${language}/projects`
+  //   },
+  //   {
+  //     id: 6,
+  //     title: 'LED Matrix Display',
+  //     description: 'Affichage LED matriciel programmable avec effets visuels, contrôle WiFi et éditeur graphique web.',
+  //     image: 'https://images.pexels.com/photos/2781814/pexels-photo-2781814.jpeg?auto=compress&cs=tinysrgb&w=600',
+  //     category: 'electronics',
+  //     technologies: ['Arduino', 'FastLED', 'WebSocket', 'JavaScript'],
+  //     github: '#',
+  //     demo: `/portfolio/#/${language}/projects`
+  //   },
+  //   {
+  //     id: 7,
+  //     title: 'Home Made server',
+  //     description: 'Serveur personnel pour héberger des applications web, avec gestion de la sécurité et des performances.',
+  //     image: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=600',
+  //     category: '',
+  //     technologies: ['Docker', 'Nginx', 'Node.js', 'PostgreSQL'],
+  //     github: '#',
+  //     demo: `/portfolio/#/${language}/projects`
+  //   }
+  // ];
 
   const filteredProjects = activeFilter === 'all'
     ? projects

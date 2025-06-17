@@ -1,5 +1,7 @@
+import { addDoc, collection } from "firebase/firestore";
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import React, { useState } from 'react';
+import { db } from '../Firebase';
 
 const Contact = ({ lang }) => {
   const [formData, setFormData] = useState({
@@ -9,10 +11,21 @@ const Contact = ({ lang }) => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
+    //console.log('Form submitted:', formData);
+    try {
+      const docRef = await addDoc(collection(db, "contact"), {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        subject: formData.subject
+      });
+      //console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
     // Reset form
     setFormData({ name: '', email: '', subject: '', message: '' });
   };

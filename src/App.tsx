@@ -3,6 +3,9 @@ import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './i18n/i18n';
 import Home from './pages/Home';
 
+// AIzaSyDAJMBLsuoKgdZOxZRK8Pvvbug7yyyLdIM
+// const admin = require('firebase-admin');
+
 const App: React.FC = () => {
   React.useEffect(() => {
     const link = document.createElement('link');
