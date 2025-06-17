@@ -1,5 +1,3 @@
-## Hi there 👋
-
 <h1 align="center">👋 Bonjour, moi c'est <span style="color:#3b82f6;">Paul Bouchet</span></h1>
 <p align="center">
   <strong>Développeur Fullstack & Logiciel</strong><br/>
