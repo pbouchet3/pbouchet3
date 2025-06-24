@@ -1,13 +1,17 @@
 import {
   ArrowLeft,
-  Code,
+  CircuitBoard,
+  Dot,
   ExternalLink,
-  Github,
-  Play,
+  Fish,
+  Laptop,
+  Music,
   RotateCcw,
+  Scan,
   Smartphone,
-  Star
+  TextCursor
 } from 'lucide-react';
+
 import { useEffect, useState } from 'react';
 
 interface ProjectDetailProps {
@@ -44,7 +48,7 @@ interface ProjectData {
 
 export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
   const [project, setProject] = useState<ProjectData | null>(null);
-  const [activeTab, setActiveTab] = useState<'overview' | 'demo' | 'screenshots'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'demo' | 'screenshots' | 'code'>('overview');
   const [isIframeLoading, setIsIframeLoading] = useState(true);
   const [iframeError, setIframeError] = useState(false);
 
@@ -52,89 +56,99 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
   const projectsData: Record<string, ProjectData> = {
     '1': {
       id: '1',
-      title: 'ProCam Studio',
-      category: 'Photographie',
-      description: 'Application de photographie professionnelle exploitant pleinement le système Pro Camera.',
-      longDescription: 'ProCam Studio révolutionne la photographie mobile en exploitant pleinement les capacités du système Pro Camera de l\'iPhone Pro Max. Avec des contrôles manuels avancés, le support RAW complet et une IA de retouche automatique, cette application transforme votre iPhone en véritable appareil photo professionnel. Les photographes peuvent ajuster l\'exposition, la balance des blancs, l\'ISO et la vitesse d\'obturation avec une précision inégalée.',
-      icon: 'Camera',
-      image: 'https://images.pexels.com/photos/1983037/pexels-photo-1983037.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      features: ['Mode RAW', 'IA Retouche', 'Contrôles manuels', 'Export 4K'],
+      title: "Arts Pour Eux",
+      category: "Site Web et Infrastructure",
+      description: "Site Web et infrastructure pour Arts Pour Eux, une association caritative. Conception et développement d'un site web responsive avec gestion de contenu.",
+      longDescription: 'Arts Pour Eux est une association caritative dédiée à l\'organisation de concerts dont les fonds seront reverses a des associations. Ce projet comprend la conception et le développement d\'un site web responsive, permettant à l\'association de partager ses activités, mettre en ligne les dates d\'evenements et promouvoir les artistes qu\'elle soutient. Le site est optimisé pour une navigation fluide sur tous les appareils et intègre un système de gestion de contenu pour faciliter les mises à jour. Ce site est lie a un BOT Discord qui simplifie grandement l\'acces administrateur du site aux gerants.',
+      icon: Music,
+      image: "https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ['CSS avec TailWindCSS', 'Gestion de MediaPlayer avec barre de son', 'Controle via un BOT Discord', 'Developpement selon les envies du client'],
       color: 'from-purple-500/20 to-pink-500/20',
       accentColor: 'text-purple-400',
       status: 'Disponible',
-      version: '2.1.4',
-      lastUpdate: '15 déc 2024',
-      downloads: '2.3M+',
-      rating: 4.8,
-      reviews: 12847,
-      developer: 'ProCam Studios Inc.',
-      size: '127 MB',
-      compatibility: ['iPhone 15 Pro', 'iPhone 15 Pro Max', 'iPhone 14 Pro', 'iPhone 14 Pro Max'],
-      screenshots: [
-        'https://images.pexels.com/photos/1983037/pexels-photo-1983037.jpeg?auto=compress&cs=tinysrgb&w=800',
-        'https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=800',
-        'https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=800'
-      ],
+      version: '0.0.1',
+      lastUpdate: '20 Juin 2025',
+      developer: 'Paul BOUCHET',
+      compatibility: ['phone', 'computer'],
+      screenshots: [],
       demoUrl: 'https://artspoureux.aynline.fr',
-      githubUrl: 'https://github.com/procam/studio',
-      technologies: ['Swift', 'Core ML', 'Metal', 'AVFoundation']
+      // githubUrl: '',
+      technologies: ['ReactJS', 'Node.JS', 'Tailwind CSS', 'Python']
     },
     '2': {
       id: '2',
-      title: 'CineMax Pro',
-      category: 'Vidéo',
-      description: 'Suite complète de montage vidéo mobile avec montage 4K en temps réel.',
-      longDescription: 'CineMax Pro est la suite de montage vidéo mobile la plus avancée, conçue spécifiquement pour exploiter la puissance de la puce A17 Pro. Montez des vidéos 4K en temps réel, appliquez des effets professionnels et exportez directement en ProRes. L\'interface intuitive permet aux créateurs de contenu de produire des vidéos de qualité cinématographique directement depuis leur iPhone.',
-      icon: 'Video',
+      title: "CTTY",
+      category: "Logiciel en Ligne de Commande",
+      description: "Logiciel de gestion de port UART en CLI, sous Linux. Permettant la communication avec des peripheriques series et la gestion de flux de donnees.",
+      longDescription: 'CTTY est un logiciel de gestion de port UART en ligne de commande, conçu pour les utilisateurs avancés et les développeurs. Il permet la communication avec des périphériques série via des ports UART sous Linux. Avec CTTY, vous pouvez configurer des paramètres de communication, envoyer et recevoir des données en temps réel, et gérer les flux de données de manière efficace. Ce logiciel est idéal pour les projets nécessitant une interaction directe avec du matériel via des ports série.',
+      icon: TextCursor,
       image: 'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      features: ['Montage 4K', 'Effets temps réel', 'Export ProRes', 'Stabilisation IA'],
+      features: ['Utilisation de port com', 'Maniement d\'arguments node.js', 'Terminal complet', 'Gestion de flux de données', 'Compatible avec les périphériques série'],
       color: 'from-blue-500/20 to-cyan-500/20',
       accentColor: 'text-blue-400',
       status: 'Bêta',
-      version: '1.8.2 Beta',
-      lastUpdate: '12 déc 2024',
-      downloads: '890K+',
-      rating: 4.6,
-      reviews: 5632,
-      developer: 'CineMax Technologies',
-      size: '245 MB',
-      compatibility: ['iPhone 15 Pro Max', 'iPhone 15 Pro', 'iPad Pro M2'],
+      version: '0.0.1',
+      lastUpdate: '10 Juin 2025',
+      developer: 'Paul BOUCHET',
+      compatibility: ['linux'],
       screenshots: [
-        'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=800',
-        'https://images.pexels.com/photos/3945313/pexels-photo-3945313.jpeg?auto=compress&cs=tinysrgb&w=800',
-        'https://images.pexels.com/photos/3585047/pexels-photo-3585047.jpeg?auto=compress&cs=tinysrgb&w=800'
+        // 'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=800',
+        // 'https://images.pexels.com/photos/3945313/pexels-photo-3945313.jpeg?auto=compress&cs=tinysrgb&w=800',
+        // 'https://images.pexels.com/photos/3585047/pexels-photo-3585047.jpeg?auto=compress&cs=tinysrgb&w=800'
       ],
-      demoUrl: 'https://cinemax-demo.vercel.app',
-      technologies: ['Swift', 'Metal Performance Shaders', 'Core Video', 'AVKit']
+      // demoUrl: 'https://cinemax-demo.vercel.app',
+      // githubUrl: 'https://github.com/pbouchet3/ctty.git',
+      technologies: ['JavaScript', 'Node.JS', 'Linux', 'UART']
     },
     '3': {
       id: '3',
-      title: 'GameForge Mobile',
-      category: 'Gaming',
-      description: 'Plateforme de développement de jeux mobile avec éditeur visuel intégré.',
-      longDescription: 'GameForge Mobile démocratise le développement de jeux en offrant un environnement de création complet sur iPhone. Avec son éditeur visuel intuitif et ses outils de test en temps réel, créez des jeux 2D et 3D directement sur votre appareil. Le GPU 6-cœurs optimisé permet des performances graphiques exceptionnelles pour tester vos créations.',
-      icon: 'Gamepad2',
-      image: 'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      features: ['Éditeur visuel', 'Test temps réel', 'Partage cloud', 'Multijoueur'],
+      title: "Smart Trash Can",
+      category: "IoT et VR",
+      description: "Maquette de poubelles connectees, avec un suivi du remplissage, de l'ouverture/fermeture, de la chute de celle-ci. Avec une application VR pour le suivi du camion poubelle.",
+      longDescription: 'Projet scolaire de maquette de poubelles connectées, intégrant des capteurs pour suivre le niveau de remplissage, l\'ouverture/fermeture et la chute des poubelles. Le projet comprend également une application VR pour visualiser les données en temps réel et gérer le suivi du camion poubelle. Cette solution IoT permet une gestion efficace des déchets en fournissant des informations précises sur l\'état des poubelles, et sur la necessité de les vider. Le projet met en avant l\'utilisation de la réalité virtuelle pour améliorer l\'expérience utilisateur et la gestion des déchets.',
+      icon: CircuitBoard,
+      image: "https://images.pexels.com/photos/19126087/pexels-photo-19126087.jpeg?auto=compress&cs=tinysrgb&w=800",
+      features: ['Capteurs de niveau de remplissage', 'Suivi d\'ouverture/fermeture', 'Détection de chute', 'Application VR pour suivi'],
       color: 'from-green-500/20 to-emerald-500/20',
       accentColor: 'text-green-400',
-      status: 'Développement',
-      version: '0.9.1 Alpha',
-      lastUpdate: '10 déc 2024',
-      downloads: '45K+',
-      rating: 4.2,
-      reviews: 892,
-      developer: 'GameForge Studios',
-      size: '189 MB',
-      compatibility: ['iPhone 15 Pro Max', 'iPhone 15 Pro'],
+      status: 'Finit',
+      version: '1.0',
+      lastUpdate: '8 Juillet 2024',
+      developer: 'Groupe ',
+      compatibility: ['computer', 'ar'],
       screenshots: [
-        'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800',
-        'https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=800',
-        'https://images.pexels.com/photos/1293261/pexels-photo-1293261.jpeg?auto=compress&cs=tinysrgb&w=800'
+        // 'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800',
+        // 'https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=800',
+        // 'https://images.pexels.com/photos/1293261/pexels-photo-1293261.jpeg?auto=compress&cs=tinysrgb&w=800'
       ],
-      demoUrl: 'https://gameforge-demo.surge.sh',
-      githubUrl: 'https://github.com/gameforge/mobile',
-      technologies: ['Unity', 'C#', 'Metal', 'GameplayKit']
+      // demoUrl: 'https://gameforge-demo.surge.sh',
+      // githubUrl: 'https://github.com/gameforge/mobile',
+      technologies: ["Arduino", "Capteurs", "C/C++", "Electronique"]
+    },
+    '4': {
+      id: '4',
+      title: "Eclipsis",
+      category: "IoT, Mobile et Back-End",
+      description: "Aquarium connecté permettant de suivre l'état de l'eau, la température, la lumiere, et les paramètres de l'aquarium. Avec une application mobile pour le suivi et la gestion.",
+      longDescription: 'Eclipsis est un projet scolaire d\'aquarium connecté, intégrant des capteurs pour surveiller l\'état de l\'eau, la température, la lumière et d\'autres paramètres de l\'aquarium. Le projet comprend également une application mobile permettant aux utilisateurs de suivre ces données en temps réel et de gérer les paramètres de l\'aquarium. Cette solution IoT offre une expérience utilisateur améliorée en fournissant des informations précises sur la santé de l\'aquarium et en permettant une gestion facile des conditions de vie des poissons.',
+      icon: Fish,
+      image: 'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      features: ['Capteurs de qualité de l\'eau', 'Suivi de la température', 'Gestion de la lumière', 'Application mobile pour suivi et gestion'],
+      color: 'from-green-500/20 to-emerald-500/20',
+      accentColor: 'text-green-400',
+      status: 'Finit',
+      version: '0.1',
+      lastUpdate: '17 Avril 2025',
+      developer: 'Groupe Scolaire Eclipsis',
+      compatibility: [''],
+      screenshots: [
+        // 'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800',
+        // 'https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=800',
+        // 'https://images.pexels.com/photos/1293261/pexels-photo-1293261.jpeg?auto=compress&cs=tinysrgb&w=800'
+      ],
+      // demoUrl: 'https://gameforge-demo.surge.sh',
+      // githubUrl: 'https://github.com/gameforge/mobile',
+      technologies: ['Arduino', 'Capteurs', 'C/C++', 'Electronique', 'React Native', 'Laravel', 'MariaDB']
     }
   };
 
@@ -164,11 +178,25 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
     // Force iframe reload
     const iframe = document.getElementById('demo-iframe') as HTMLIFrameElement;
     if (iframe) {
-      const src = iframe.src;
-      iframe.src = "about:blank"; // Temporarily set to blank to force reload
-      iframe.src = src;
+      iframe.src = iframe.src;
     }
   };
+
+  const getCompatibilityIcon = (category: string) => {
+    switch (category) {
+      case 'phone':
+        return <Smartphone className="w-4 h-4 text-blue-400" />;
+      case 'computer':
+        return <Laptop className="w-4 h-4 text-blue-400" />;
+      case 'linux':
+        return <TextCursor className="w-4 h-4 text-blue-400" />;
+      case 'ar':
+        return <Scan className="w-4 h-4 text-blue-400" />;
+      default:
+        return <Dot className="w-4 h-4 text-blue-400" />;
+    }
+  }
+
 
   if (!project) {
     return (
@@ -191,22 +219,6 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
       </div>
     );
   }
-
-  const renderStars = (rating: number) => {
-    return (
-      <div className="flex space-x-1">
-        {[1, 2, 3, 4, 5].map((star) => (
-          <Star
-            key={star}
-            className={`w-4 h-4 ${star <= rating
-              ? 'text-yellow-400 fill-yellow-400'
-              : 'text-white/30'
-              }`}
-          />
-        ))}
-      </div>
-    );
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
@@ -234,7 +246,10 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
                 <div>
                   <div className="flex items-center space-x-4 mb-6">
                     <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-3xl flex items-center justify-center">
-                      <Code className={`w-10 h-10 ${project.accentColor}`} />
+                      {project.icon && (
+                        <project.icon className={`w-10 h-10 ${project.accentColor}`
+                        } />
+                      )}
                     </div>
                     <div>
                       <h1 className="text-4xl font-bold text-white mb-2">{project.title}</h1>
@@ -245,37 +260,7 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
                   <p className="text-white/80 text-lg leading-relaxed mb-6">
                     {project.description}
                   </p>
-
-                  <div className="flex items-center space-x-6 mb-6">
-                    <div className="flex items-center space-x-2">
-                      {renderStars(Math.round(project.rating))}
-                      <span className="text-white font-semibold">{project.rating}</span>
-                      <span className="text-white/60">({project.reviews.toLocaleString()})</span>
-                    </div>
-                    <div className="text-white/60">
-                      {project.downloads} téléchargements
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-3">
-                    {project.demoUrl && (
-                      <button
-                        onClick={() => setActiveTab('demo')}
-                        className="bg-white/20 backdrop-blur-sm border border-white/30 px-6 py-3 rounded-2xl text-white hover:bg-white/30 transition-all duration-300 flex items-center space-x-2"
-                      >
-                        <Play className="w-5 h-5" />
-                        <span>Démo live</span>
-                      </button>
-                    )}
-                    {project.githubUrl && (
-                      <button className="bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-2xl text-white hover:bg-white/20 transition-all duration-300 flex items-center space-x-2">
-                        <Github className="w-5 h-5" />
-                        <span>Code source</span>
-                      </button>
-                    )}
-                  </div>
                 </div>
-
                 <div className="relative">
                   <img
                     src={project.image}
@@ -311,7 +296,7 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
                   Démo live
                 </button>
               )}
-              <button
+              {project.screenshots.length > 0 && (<button
                 onClick={() => setActiveTab('screenshots')}
                 className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${activeTab === 'screenshots'
                   ? 'bg-white/20 text-white shadow-lg'
@@ -319,7 +304,17 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
                   }`}
               >
                 Captures
-              </button>
+              </button>)}
+              {project.githubUrl && (
+                <button
+                  onClick={() => setActiveTab('code')}
+                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${activeTab === 'screenshots'
+                    ? 'bg-white/20 text-white shadow-lg'
+                    : 'text-white/60 hover:text-white hover:bg-white/10'
+                    }`}
+                >
+                  Code Source
+                </button>)}
             </div>
           </div>
 
@@ -422,7 +417,65 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
                 </div>
               )}
 
-              {activeTab === 'screenshots' && (
+              {activeTab === 'code' && project.githubUrl && (
+                <div className="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-6">
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-2xl font-bold text-white">Démo interactive</h2>
+                    <div className="flex items-center space-x-3">
+                      <button
+                        onClick={refreshIframe}
+                        className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+                        title="Actualiser"
+                      >
+                        <RotateCcw className="w-5 h-5" />
+                      </button>
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+                        title="Ouvrir dans un nouvel onglet"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="relative bg-white/10 rounded-2xl overflow-hidden" style={{ height: '600px' }}>
+                    {isIframeLoading && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm">
+                        <div className="text-white">Chargement de la démo...</div>
+                      </div>
+                    )}
+
+                    {iframeError ? (
+                      <div className="absolute inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm">
+                        <div className="text-center">
+                          <div className="text-white/60 mb-4">Impossible de charger la démo</div>
+                          <button
+                            onClick={refreshIframe}
+                            className="bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-xl text-white hover:bg-white/30 transition-all duration-300"
+                          >
+                            Réessayer
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <iframe
+                        id="demo-iframe"
+                        src={project.githubUrl}
+                        className="w-full h-full border-0 rounded-2xl"
+                        onLoad={handleIframeLoad}
+                        onError={handleIframeError}
+                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                        title={`Démo de ${project.title}`}
+                      />
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {project.screenshots && activeTab === 'screenshots' && (
                 <div className="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8">
                   <h2 className="text-2xl font-bold text-white mb-6">Captures d'écran</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -452,10 +505,6 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
                     <span className="text-white font-medium">{project.version}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-white/60">Taille</span>
-                    <span className="text-white font-medium">{project.size}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
                     <span className="text-white/60">Développeur</span>
                     <span className="text-white font-medium text-right text-sm">{project.developer}</span>
                   </div>
@@ -472,8 +521,20 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
                 <div className="space-y-2">
                   {project.compatibility.map((device, index) => (
                     <div key={index} className="flex items-center space-x-3 p-3 bg-white/5 rounded-2xl border border-white/10">
-                      <Smartphone className="w-4 h-4 text-green-400" />
-                      <span className="text-white/80 text-sm">{device}</span>
+                      {getCompatibilityIcon(device)}
+                      <span className="text-white font-medium">
+                        {
+                          device === 'phone'
+                            ? 'Téléphone'
+                            : device === 'computer'
+                              ? 'Ordinateur'
+                              : device === 'linux'
+                                ? 'Linux' : device === 'ar'
+                                  ? 'Réalité Augmentée'
+                                  : 'Autre'
+                        }
+                      </span>
+                      {/* <span className="text-white/80 text-sm">{device}</span> */}
                     </div>
                   ))}
                 </div>
@@ -495,6 +556,6 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
