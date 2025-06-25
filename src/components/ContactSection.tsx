@@ -112,7 +112,7 @@ export default function ContactSection() {
               <>
                 <div className="flex items-center space-x-3 mb-6">
                   <MessageCircle className="w-8 h-8 text-purple-400" />
-                  <h3 className="text-2xl font-bold text-white">Envoyez-nous un message</h3>
+                  <h3 className="text-2xl font-bold text-white">Envoyez-moi un message</h3>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -157,7 +157,6 @@ export default function ContactSection() {
                     >
                       <option value="" className="bg-slate-800">Choisir un sujet</option>
                       <option value="project" className="bg-slate-800">Proposez un projet</option>
-                      <option value="recruitment" className="bg-slate-800">Recrutement</option>
                       <option value="other" className="bg-slate-800">Autre</option>
                     </select>
                   </div>
