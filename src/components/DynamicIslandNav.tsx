@@ -52,7 +52,7 @@ export default function DynamicIslandNav({ isScrolled }: DynamicIslandNavProps) 
           </div>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className=" md:flex items-center space-x-4">
             <a href="#home" className={`text-xs text-white/80 hover:text-white transition-all duration-500 ease-out ${isHovered ? "text-sm opacity-100" : "text-[0px] opacity-0"}`}>
               Accueil
             </a>
