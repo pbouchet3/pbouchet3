@@ -83,7 +83,7 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className=" space-y-8">
             <div className="space-y-6">
               {contactInfo.map((contact, index) => (
                 <div
