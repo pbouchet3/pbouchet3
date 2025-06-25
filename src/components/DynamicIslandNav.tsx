@@ -8,14 +8,13 @@ interface DynamicIslandNavProps {
   isScrolled: boolean;
 }
 
-export default function DynamicIslandNav({ scrollY, isScrolled }: DynamicIslandNavProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function DynamicIslandNav({ isScrolled }: DynamicIslandNavProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
       <div
-        className={`relative transition-all duration-700 ease-out ${isMenuOpen || isHovered
+        className={`relative transition-all duration-700 ease-out ${isHovered
           ? 'w-96 h-16'
           : isScrolled
             ? 'w-48 h-12'
@@ -31,13 +30,13 @@ export default function DynamicIslandNav({ scrollY, isScrolled }: DynamicIslandN
         </div>
 
         {/* Collapsed State - Logo */}
-        <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${isMenuOpen || isHovered ? 'opacity-0 scale-75' : 'opacity-100 scale-100'
+        <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${isHovered ? 'opacity-0 scale-75' : 'opacity-100 scale-100'
           }`}>
           <Menu className="w-5 h-5 text-white" />
         </div>
 
         {/* Expanded State - Navigation */}
-        <div className={`absolute inset-0 flex items-center justify-between px-6 transition-all duration-500 ${isMenuOpen || isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
+        <div className={`absolute inset-0 flex items-center justify-between px-6 transition-all duration-500 ${isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
           }`}>
           {/* Logo */}
           <div className="flex items-center space-x-2">

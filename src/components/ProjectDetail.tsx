@@ -25,7 +25,7 @@ interface ProjectData {
   category: string;
   description: string;
   longDescription: string;
-  icon: any;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   image: string;
   features: string[];
   color: string;
@@ -156,9 +156,7 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
     const projectData = projectsData[projectId];
     if (projectData) {
       setProject(projectData);
-      if (projectData.demoUrl) {
-        setActiveTab('demo');
-      }
+      setActiveTab('overview');
     }
   }, [projectId]);
 
@@ -178,7 +176,9 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
     // Force iframe reload
     const iframe = document.getElementById('demo-iframe') as HTMLIFrameElement;
     if (iframe) {
-      iframe.src = iframe.src;
+      const src = iframe.src
+      iframe.src = ''; // Temporarily set to empty to force reload
+      iframe.src = src;
     }
   };
 
