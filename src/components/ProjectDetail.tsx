@@ -48,10 +48,10 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
       category: "Site Web et Infrastructure",
       description: "Site web et infrastructure pour Arts Pour Eux, une association caritative. Conception et développement d'un site web responsive avec gestion de contenu.",
       longDescription:
-        "Arts Pour Eux est une association caritative dédiée à l'organisation de concerts dont les fonds seront reversés à des associations. Ce projet comprend la conception et le développement d'un site web responsive, permettant à l'association de partager ses activités, de mettre en ligne les dates d'événements et de promouvoir les artistes qu'elle soutient. Le site est optimisé pour une navigation fluide sur tous les appareils et intègre un système de gestion de contenu pour faciliter les mises à jour. Ce site est lié à un bot Discord qui simplifie grandement l'accès administrateur du site aux gérants.",
+        "Arts Pour Eux est une association caritative dédiée à l'organisation de concerts dont les fonds sont reversés à des associations. Ce projet comprend la conception et le développement d'un site web responsive, permettant à l'association de partager ses activités, de mettre en ligne les dates d'événements et de promouvoir les artistes qu'elle soutient. Le site est optimisé pour une navigation fluide sur tous les appareils et intègre un système de gestion de contenu pour faciliter les mises à jour. Ce site est lié à un bot Discord qui simplifie grandement l'accès administrateur du site pour les gérants.",
       icon: Music,
       image: "https://images.pexels.com/photos/167491/pexels-photo-167491.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["CSS avec TailWindCSS", "Gestion de MediaPlayer avec barre de son", "Controle via un BOT Discord", "Developpement selon les envies du client"],
+      features: ["CSS avec TailwindCSS", "Gestion de MediaPlayer avec barre de son", "Contrôle via un bot Discord", "Développement selon les envies du client"],
       color: "from-purple-500/20 to-pink-500/20",
       accentColor: "text-purple-400",
       status: "Disponible",
@@ -61,19 +61,18 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
       compatibility: ["phone", "computer"],
       screenshots: [],
       demoUrl: "https://artspoureux.aynline.fr",
-      // githubUrl: '',
       technologies: ["ReactJS", "Node.JS", "Tailwind CSS", "Python"],
     },
     "2": {
       id: "2",
       title: "CTTY",
       category: "Logiciel en Ligne de Commande",
-      description: "Logiciel de gestion de port UART en CLI, sous Linux, permettant la communication avec des périphériques série et la gestion de flux de données.",
+      description: "Logiciel de gestion de port UART en CLI, sous Linux, permettant la communication avec des périphériques série et la gestion des flux de données.",
       longDescription:
         "CTTY est un logiciel de gestion de port UART en ligne de commande, conçu pour les utilisateurs avancés et les développeurs. Il permet la communication avec des périphériques série via des ports UART sous Linux. Avec CTTY, vous pouvez configurer des paramètres de communication, envoyer et recevoir des données en temps réel, et gérer les flux de données de manière efficace. Ce logiciel est idéal pour les projets nécessitant une interaction directe avec du matériel via des ports série.",
       icon: TextCursor,
       image: "https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      features: ["Utilisation de port com", "Maniement d'arguments node.js", "Terminal complet", "Gestion de flux de données", "Compatible avec les périphériques série"],
+      features: ["Utilisation de ports COM", "Maniement d'arguments Node.js", "Terminal complet", "Gestion de flux de données", "Compatible avec les périphériques série"],
       color: "from-blue-500/20 to-cyan-500/20",
       accentColor: "text-blue-400",
       status: "Bêta",
@@ -81,13 +80,7 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
       lastUpdate: "10 Juin 2025",
       developer: "Paul BOUCHET",
       compatibility: ["linux"],
-      screenshots: [
-        // 'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // 'https://images.pexels.com/photos/3945313/pexels-photo-3945313.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // 'https://images.pexels.com/photos/3585047/pexels-photo-3585047.jpeg?auto=compress&cs=tinysrgb&w=800'
-      ],
-      // demoUrl: 'https://cinemax-demo.vercel.app',
-      // githubUrl: 'https://github.com/pbouchet3/ctty.git',
+      screenshots: [],
       technologies: ["JavaScript", "Node.JS", "Linux", "UART"],
     },
     "3": {
@@ -99,33 +92,27 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
         "Projet scolaire de maquette de poubelles connectées, intégrant des capteurs pour suivre le niveau de remplissage, l'ouverture/fermeture et la chute des poubelles. Le projet comprend également une application VR pour visualiser les données en temps réel et gérer le suivi du camion-poubelle. Cette solution IoT permet une gestion efficace des déchets en fournissant des informations précises sur l'état des poubelles et sur la nécessité de les vider. Le projet met en avant l'utilisation de la réalité virtuelle pour améliorer l'expérience utilisateur et la gestion des déchets.",
       icon: CircuitBoard,
       image: "https://images.pexels.com/photos/19126087/pexels-photo-19126087.jpeg?auto=compress&cs=tinysrgb&w=800",
-      features: ["Capteurs de niveau de remplissage", "Suivi d'ouverture/fermeture", "Détection de chute", "Application VR pour suivi"],
+      features: ["Capteurs de niveau de remplissage", "Suivi d'ouverture/fermeture", "Détection de chute", "Application VR pour le suivi"],
       color: "from-green-500/20 to-emerald-500/20",
       accentColor: "text-green-400",
       status: "Fini",
       version: "1.0",
       lastUpdate: "8 Juillet 2024",
-      developer: "Groupe ",
+      developer: "Groupe",
       compatibility: ["computer", "ar"],
-      screenshots: [
-        // 'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // 'https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // 'https://images.pexels.com/photos/1293261/pexels-photo-1293261.jpeg?auto=compress&cs=tinysrgb&w=800'
-      ],
-      // demoUrl: 'https://gameforge-demo.surge.sh',
-      // githubUrl: 'https://github.com/gameforge/mobile',
-      technologies: ["Arduino", "Capteurs", "C/C++", "Electronique"],
+      screenshots: [],
+      technologies: ["Arduino", "Capteurs", "C/C++", "Électronique"],
     },
     "4": {
       id: "4",
       title: "Eclipsis",
       category: "IoT, Mobile et Back-End",
-      description: "Aquarium connecté permettant de suivre l'état de l'eau, la température, la lumière, et les paramètres de l'aquarium. Avec une application mobile pour le suivi et la gestion.",
+      description: "Aquarium connecté permettant de suivre l'état de l'eau, la température, la lumière et les paramètres de l'aquarium. Avec une application mobile pour le suivi et la gestion.",
       longDescription:
         "Eclipsis est un projet scolaire d'aquarium connecté, intégrant des capteurs pour surveiller l'état de l'eau, la température, la lumière et d'autres paramètres de l'aquarium. Le projet comprend également une application mobile permettant aux utilisateurs de suivre ces données en temps réel et de gérer les paramètres de l'aquarium. Cette solution IoT offre une expérience utilisateur améliorée en fournissant des informations précises sur la santé de l'aquarium et en permettant une gestion facile des conditions de vie des poissons.",
       icon: Fish,
       image: "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1200",
-      features: ["Capteurs de qualité de l'eau", "Suivi de la température", "Gestion de la lumière", "Application mobile pour suivi et gestion"],
+      features: ["Capteurs de qualité de l'eau", "Suivi de la température", "Gestion de la lumière", "Application mobile pour le suivi et la gestion"],
       color: "from-green-500/20 to-emerald-500/20",
       accentColor: "text-green-400",
       status: "Fini",
@@ -133,14 +120,8 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
       lastUpdate: "17 Avril 2025",
       developer: "Groupe Scolaire Eclipsis",
       compatibility: [""],
-      screenshots: [
-        // 'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // 'https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=800',
-        // 'https://images.pexels.com/photos/1293261/pexels-photo-1293261.jpeg?auto=compress&cs=tinysrgb&w=800'
-      ],
-      // demoUrl: 'https://gameforge-demo.surge.sh',
-      // githubUrl: 'https://github.com/gameforge/mobile',
-      technologies: ["Arduino", "Capteurs", "C/C++", "Electronique", "React Native", "Laravel", "MariaDB"],
+      screenshots: [],
+      technologies: ["Arduino", "Capteurs", "C/C++", "Électronique", "React Native", "Laravel", "MariaDB"],
     },
   };
 
@@ -254,18 +235,16 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
             <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 p-2 inline-flex">
               <button
                 onClick={() => setActiveTab("overview")}
-                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                  activeTab === "overview" ? "bg-white/20 text-white shadow-lg" : "text-white/60 hover:text-white hover:bg-white/10"
-                }`}
+                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${activeTab === "overview" ? "bg-white/20 text-white shadow-lg" : "text-white/60 hover:text-white hover:bg-white/10"
+                  }`}
               >
                 Aperçu
               </button>
               {project.demoUrl && (
                 <button
                   onClick={() => setActiveTab("demo")}
-                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                    activeTab === "demo" ? "bg-white/20 text-white shadow-lg" : "text-white/60 hover:text-white hover:bg-white/10"
-                  }`}
+                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${activeTab === "demo" ? "bg-white/20 text-white shadow-lg" : "text-white/60 hover:text-white hover:bg-white/10"
+                    }`}
                 >
                   Démo live
                 </button>
@@ -273,9 +252,8 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
               {project.screenshots.length > 0 && (
                 <button
                   onClick={() => setActiveTab("screenshots")}
-                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                    activeTab === "screenshots" ? "bg-white/20 text-white shadow-lg" : "text-white/60 hover:text-white hover:bg-white/10"
-                  }`}
+                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${activeTab === "screenshots" ? "bg-white/20 text-white shadow-lg" : "text-white/60 hover:text-white hover:bg-white/10"
+                    }`}
                 >
                   Captures
                 </button>
@@ -283,9 +261,8 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
               {project.githubUrl && (
                 <button
                   onClick={() => setActiveTab("code")}
-                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                    activeTab === "screenshots" ? "bg-white/20 text-white shadow-lg" : "text-white/60 hover:text-white hover:bg-white/10"
-                  }`}
+                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${activeTab === "screenshots" ? "bg-white/20 text-white shadow-lg" : "text-white/60 hover:text-white hover:bg-white/10"
+                    }`}
                 >
                   Code Source
                 </button>
@@ -495,13 +472,12 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
               <div className="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-6">
                 <h3 className="text-xl font-bold text-white mb-4">Statut</h3>
                 <div
-                  className={`px-4 py-3 rounded-2xl text-center font-medium border ${
-                    project.status === "Disponible"
-                      ? "bg-green-500/20 text-green-400 border-green-500/30"
-                      : project.status === "Bêta"
+                  className={`px-4 py-3 rounded-2xl text-center font-medium border ${project.status === "Disponible"
+                    ? "bg-green-500/20 text-green-400 border-green-500/30"
+                    : project.status === "Bêta"
                       ? "bg-orange-500/20 text-orange-400 border-orange-500/30"
                       : "bg-blue-500/20 text-blue-400 border-blue-500/30"
-                  }`}
+                    }`}
                 >
                   {project.status}
                 </div>

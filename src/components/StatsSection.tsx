@@ -1,10 +1,24 @@
 export default function StatsSection() {
   const stats = [
-    { number: "1", label: "Master Architecte des Systemes d'Information", url: "https://www.onisep.fr/ressources/univers-metier/metiers/architecte-des-systemes-d-information" },
-    { number: "3.5", label: "Annees en alternance/CDI" },
-    { number: "~ 10", label: "Projets realises (Scolaire, Personnel, Professionnel)" },
-    { number: "~ 15", label: "Technologies utilisees" },
+    {
+      number: "1",
+      label: "Master Architecte des Systèmes d’Information",
+      url: "https://www.onisep.fr/ressources/univers-metier/metiers/architecte-des-systemes-d-information",
+    },
+    {
+      number: "3.5",
+      label: "Années en alternance/CDI",
+    },
+    {
+      number: "~ 10",
+      label: "Projets réalisés (scolaires, personnels, professionnels)",
+    },
+    {
+      number: "~ 15",
+      label: "Technologies utilisées",
+    },
   ];
+
 
   return (
     <section id="stats" className="relative py-20 px-6">

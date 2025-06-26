@@ -74,9 +74,9 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-white mb-6">
-            Contactez-nous
+            Contactez-moi
             <span className="block text-2xl font-normal text-white/60 mt-2">
-              Nous sommes là pour vous aider
+              Je suis là pour vous aider
             </span>
           </h2>
         </div>
