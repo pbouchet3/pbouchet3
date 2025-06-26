@@ -46,7 +46,7 @@ export default function StatsSection() {
       </div>
 
       {/* Call to Action */}
-      <div className="text-center mt-16">
+      {/* <div className="text-center mt-16">
         <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-3xl border border-white/10 p-8 max-w-2xl mx-auto">
           <h3 className="text-2xl font-bold text-white mb-4">Demande de devis</h3>
           <p className="text-white/70 mb-6">Contactez moi pour en parler. Je suis toujours à la recherche de nouveaux défis et projets passionnants.</p>
@@ -54,7 +54,7 @@ export default function StatsSection() {
             Contact
           </button>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

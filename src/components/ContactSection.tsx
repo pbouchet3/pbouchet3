@@ -47,7 +47,7 @@ export default function ContactSection() {
       icon: Phone,
       title: "Téléphone",
       info: "+33 7 83 19 79 56",
-      subtitle: "Lun-Ven 9h-20h",
+      subtitle: "Toujours disponible",
       color: "from-green-500/20 to-emerald-500/20",
       accentColor: "text-green-400"
     },
@@ -64,6 +64,7 @@ export default function ContactSection() {
       title: "Adresse",
       // info: "123 Avenue des Champs-Élysées",
       info: "33170 Gradignan, France",
+      subtitle: "Dans la région bordelaise",
       color: "from-purple-500/20 to-pink-500/20",
       accentColor: "text-purple-400"
     }
@@ -89,6 +90,7 @@ export default function ContactSection() {
                 <div
                   key={index}
                   className={`bg-gradient-to-br ${contact.color} backdrop-blur-xl rounded-3xl border border-white/10 p-6 hover:scale-105 transition-all duration-300`}
+
                 >
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">

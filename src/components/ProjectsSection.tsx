@@ -120,7 +120,7 @@ export default function ProjectsSection({ onProjectClick }: ProjectsSectionProps
             </span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Decouvrez mes projets les plus recents, realises avec passion et expertise. Chaque application est un exemple de ce que je peux accomplir avec la technologie moderne.
+            Découvrez mes projets les plus récents, réalisés avec passion et expertise. Chaque application est un exemple de ce que je peux accomplir avec les technologies modernes.
           </p>
         </div>
 
