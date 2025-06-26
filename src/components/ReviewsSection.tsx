@@ -178,7 +178,7 @@ export default function ReviewsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-white mb-6">
-            Avis Utilisateurs
+            Avis
             <span className="block text-2xl font-normal text-white/60 mt-2">Ce qu'ils en pensent</span>
           </h2>
 
