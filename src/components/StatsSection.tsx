@@ -21,7 +21,7 @@ export default function StatsSection() {
 
 
   return (
-    <section id="stats" className="relative py-20 px-6">
+    <div id="stats" className="relative py-20 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -55,6 +55,6 @@ export default function StatsSection() {
           </button>
         </div>
       </div> */}
-    </section>
+    </div>
   );
 }

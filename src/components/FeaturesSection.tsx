@@ -1,6 +1,6 @@
 import { Bot, Database, Monitor, Server, Shield, Wifi } from "lucide-react";
 
-export default function FeaturesSection() {
+export default function FeaturesSection({ children }: { children?: React.ReactNode }) {
   const features = [
     {
       icon: Monitor,
@@ -97,6 +97,7 @@ export default function FeaturesSection() {
           ))}
         </div>
       </div>
+      {children}
     </section>
   );
 }

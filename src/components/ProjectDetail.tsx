@@ -111,7 +111,7 @@ export default function ProjectDetail({ projectId, onBack }: ProjectDetailProps)
       longDescription:
         "Eclipsis est un projet scolaire d'aquarium connecté, intégrant des capteurs pour surveiller l'état de l'eau, la température, la lumière et d'autres paramètres de l'aquarium. Le projet comprend également une application mobile permettant aux utilisateurs de suivre ces données en temps réel et de gérer les paramètres de l'aquarium. Cette solution IoT offre une expérience utilisateur améliorée en fournissant des informations précises sur la santé de l'aquarium et en permettant une gestion facile des conditions de vie des poissons.",
       icon: Fish,
-      image: "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      image: "https://images.pexels.com/photos/128756/pexels-photo-128756.jpeg?auto=compress&cs=tinysrgb&w=800",
       features: ["Capteurs de qualité de l'eau", "Suivi de la température", "Gestion de la lumière", "Application mobile pour le suivi et la gestion"],
       color: "from-green-500/20 to-emerald-500/20",
       accentColor: "text-green-400",

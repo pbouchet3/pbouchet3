@@ -128,7 +128,6 @@ export default function ContactSection() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-white/40 transition-colors"
-                        placeholder="Votre nom"
                         required
                       />
                     </div>
@@ -141,7 +140,6 @@ export default function ContactSection() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-white/40 transition-colors"
-                        placeholder="votre@email.com"
                         required
                       />
                     </div>
@@ -172,7 +170,6 @@ export default function ContactSection() {
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={5}
                       className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-white/40 transition-colors resize-none"
-                      placeholder="Décrivez votre demande en détail..."
                       required
                     />
                   </div>

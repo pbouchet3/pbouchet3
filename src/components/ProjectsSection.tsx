@@ -6,6 +6,7 @@ import {
   TextCursor
 } from 'lucide-react';
 
+
 interface ProjectsSectionProps {
   onProjectClick?: (projectId: string) => void;
 }
@@ -60,6 +61,7 @@ export default function ProjectsSection({ onProjectClick }: ProjectsSectionProps
       category: "IoT, Mobile et Back-End",
       description: "Aquarium connecté permettant de suivre l'état de l'eau, la température, la lumière et les paramètres de l'aquarium. Avec une application mobile pour le suivi et la gestion.",
       icon: Fish,
+      // image: "/eclipsis.jpg",
       image: "https://images.pexels.com/photos/128756/pexels-photo-128756.jpeg?auto=compress&cs=tinysrgb&w=800",
       features: ["Capteurs", "C/C++", "Électronique", "React Native", "Laravel", "API REST"],
       color: "from-green-500/20 to-emerald-500/20",
@@ -141,7 +143,7 @@ export default function ProjectsSection({ onProjectClick }: ProjectsSectionProps
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
 
                   {/* Status Badge */}
                   <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium border backdrop-blur-sm ${getStatusColor(project.status)}`}>
@@ -160,15 +162,6 @@ export default function ProjectsSection({ onProjectClick }: ProjectsSectionProps
                       Démo disponible
                     </div>
                   )}
-
-
-
-                  {/* Play Button Overlay */}
-                  {/* <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"> */}
-                  {/* <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30"> */}
-                  {/* <Play className="w-8 h-8 text-white ml-1" /> */}
-                  {/* </div> */}
-                  {/* </div> */}
                 </div>
 
                 {/* Content */}

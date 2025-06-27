@@ -16,6 +16,10 @@ function App() {
   const [currentView, setCurrentView] = useState<'home' | 'project'>('home');
   const [selectedProjectId, setSelectedProjectId] = useState<string>('');
 
+  // Expose the "public" folder as the website's public assets directory.
+  // In React (Vite, CRA, etc.), the "public" folder is already served at the root.
+  // No code is needed here; just place static assets in the "public" folder.
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -95,11 +99,12 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
       <BackgroundEffects />
-      <DynamicIslandNav scrollY={scrollY} isScrolled={isScrolled} />
+      <DynamicIslandNav isScrolled={isScrolled} />
       <HeroSection scrollY={scrollY} />
-      <FeaturesSection />
+      <FeaturesSection >
+        <StatsSection />
+      </FeaturesSection>
       <ProjectsSection onProjectClick={handleProjectClick} />
-      <StatsSection />
       <ReviewsSection />
       <ContactSection />
       <Footer />
